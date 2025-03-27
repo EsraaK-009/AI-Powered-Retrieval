@@ -1,0 +1,46 @@
+The Open Food Facts database contains the following tables and columns:
+
+1. Table: brands
+   - Columns:
+     - name (Type: character varying): The name of the brand.
+     - id (Type: integer): The unique identifier for the brand.
+
+2. Table: categories
+   - Columns:
+     - id (Type: integer): The unique identifier for the category.
+     - name (Type: character varying): The name of the category (e.g., snacks, beverages).
+
+3. Table: countries
+   - Columns:
+     - name (Type: character varying): The name of the country.
+     - id (Type: integer): The unique identifier for the country.
+
+4. Table: products
+   - Columns:
+     - id (Type: integer): The unique identifier for the product.
+     - product_name (Type: character varying): The name of the product.
+     - creator (Type: character varying): The creator or manufacturer of the product.
+     - ingredients (Type: character varying): The ingredients in the product.
+     - category (Type: integer): Foreign key referring to the `categories` table.
+     - sugars_100g (Type: double precision): Amount of sugar per 100g.
+     - salt_100g (Type: double precision): Amount of salt per 100g.
+     - energy_100g (Type: double precision): Amount of energy (calories) per 100g.
+     - fat_100g (Type: double precision): Amount of fat per 100g.
+     - proteins_100g (Type: double precision): Amount of protein per 100g.
+     - carbohydrates_100g (Type: double precision): Amount of carbohydrates per 100g.
+
+5. Table: products_brands
+   - Columns:
+     - product_id (Type: integer): Foreign key referring to the `products` table.
+     - brand_id (Type: integer): Foreign key referring to the `brands` table.
+     - id (Type: integer): Unique identifier for the relationship.
+
+6. Table: products_countries
+   - Columns:
+     - product_id (Type: integer): Foreign key referring to the `products` table.
+     - country_id (Type: integer): Foreign key referring to the `countries` table.
+     - id (Type: integer): Unique identifier for the relationship.
+
+     Using the previous database schema convert the following natural language question, Question: {question} into SQL query.
+     Return only the SQL code, nothing else and without any comment or explanation
+SQL query:

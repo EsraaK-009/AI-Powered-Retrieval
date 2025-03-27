@@ -1,0 +1,4 @@
+open-food-facts-postgresql-import-master/
+.venv/
+.env
+models
